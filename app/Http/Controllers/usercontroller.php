@@ -6,11 +6,25 @@ use Illuminate\Http\Request;
 use App\Models\User;
 class usercontroller extends Controller
 {
+
+
+
+
+    public function __construct()
+    {
+        $this->middleware('checkAuth',['except'=>['create','store','login','logicallogin']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+   
+
+
+
     public function index()
     {
          

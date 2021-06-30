@@ -19,7 +19,7 @@ Route::get('/', function () {
 //add user
 Route::resource('user','userController');
 //index
-Route::resource('user','userController');
+Route::resource('user','userController')->middleware('checkAuth');
 //edit
 Route::resource('user/{id}/edit','userController');
 //remove user
@@ -35,7 +35,7 @@ Route::get('Logout','userController@logout');
 
 //product routing
 //display
-Route::resource('user','productController');
+Route::resource('user','productController')->middleware('checkAuth');
 //edit
 Route::resource('user/{id}/edit','productController');
 //add
